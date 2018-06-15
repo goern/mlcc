@@ -2,3 +2,4 @@ mlcc
 *.rpm
 *.log
 x86_64/
+mlcc-0.1.0.tar.gz

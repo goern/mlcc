@@ -3,12 +3,18 @@ Version: 0.1.0
 Release: 1%{?dist}
 Summary: A Machine Learning Stack Container Creator
 
+%global commit d20b8c39f06d22a00301822d1cc829425645cf42
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
+
 License: GPLv2+
-Source0: mlcc
+Source0: https://github.com/goern/%{name}/archive/%{commit}/%{name}-%{shortcommit}.tar.gz
 BuildRequires: make, gcc
 
 %description
 Machine Learning Stack Container Creator
+
+%prep
+%autosetup -n %{name}-%{commit}
 
 %install
 mkdir -p %{buildroot}/%{_bindir}
